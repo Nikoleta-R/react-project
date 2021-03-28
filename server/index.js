@@ -1,11 +1,18 @@
+
 const express = require('express');
-const port = 5000;
+const config = require('./config')
+const routes = require('./routes') 
+
+
 
 const app = express();
-app.get('/', (req, res)=>{
-    res.send('it is ok')
-})
+require('./config/express')(app);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`)
+require('./config/mongoose')(app);
+app.use(routes);
+
+
+
+app.listen(config.PORT, () => {
+    console.log(`Example app listening on port ${config.PORT}!`)
   });
