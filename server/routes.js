@@ -6,16 +6,18 @@ routes.get('/', async (req, res)=>{
     res.send(products);
 });
 routes.get('/add',  (req, res)=>{
-   npm
-    res.render('index', )
+   
+    res.render('createProducts', {title: 'Create', })
 })
 routes.post('/add', async (req, res)=>{
     const product = new Product ({
+
         name: req.body.name,
         imageUrl: req.body.imageUrl,
         price: req.body.price
 
     })
+    console.log(product)
     await product.save()
     res.send(product)
 })
