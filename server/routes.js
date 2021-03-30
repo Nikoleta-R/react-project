@@ -6,7 +6,7 @@ routes.get('/', async (req, res)=>{
     res.send(products);
 });
 routes.get('/add',  (req, res)=>{
-   
+   npm
     res.render('index', )
 })
 routes.post('/add', async (req, res)=>{
